@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithm Selector</title>
+</head>
+<body>
+    <h2>Sorting Algorithm Selector</h2>
+    <form id="sortingForm" action="/sort" method="post">
+        <label for="inputArray">Enter numbers (comma-separated): </label>
+        <input type="text" id="inputArray" name="inputArray" required>
+        
+        <label for="algorithm">Select Sorting Algorithm: </label>
+        <select id="algorithm" name="algorithm">
+            <option value="bubble">Bubble Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="merge">Merge Sort</option>
+            <option value="quick">Quick Sort</option>
+        </select>
+        
+        <button type="submit">Sort</button>
+    </form>
+
+        {% if result %}
+            <p>Sorted Array: {{ result|join(', ') }}</p>
+        {% endif %}
+
+</body>
+</html>
